@@ -44,7 +44,7 @@ vim.opt.lazyredraw = true
 
 vim.opt.iskeyword:append "-"
 vim.opt.shortmess:append "c"
-vim.opt.whichwrap:append ("<,>,[,],h,l")
+vim.opt.whichwrap:append("<,>,[,],h,l")
 
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
