@@ -49,3 +49,6 @@ vim.opt.whichwrap:append ("<,>,[,],h,l")
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 vim.opt.completeopt = { "menuone", "noselect" }
+
+vim.opt.showmode = false
+vim.opt.fillchars = "eob: "
