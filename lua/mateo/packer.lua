@@ -58,22 +58,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- use({
-    --     "NTBBloodbath/galaxyline.nvim",
-    --     -- your statusline
-    --     config = function()
-    --         require("galaxyline.themes.eviline")
-    --     end,
-    --     -- some optional icons
-    --     requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    -- })
-
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+        requires = { 'kyazdani42/nvim-web-devicons', opt = false }
     }
-
-    use ('kyazdani42/nvim-web-devicons')
 
     if packer_bootstrap then
       require('packer').sync()
