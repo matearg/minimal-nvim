@@ -52,3 +52,5 @@ vim.opt.completeopt = { "menuone", "noselect" }
 
 vim.opt.showmode = false
 vim.opt.fillchars = "eob: "
+
+vim.opt.shell = "pwsh.exe -NoLogo"
