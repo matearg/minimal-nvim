@@ -32,7 +32,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.updatetime = 50
 
 vim.opt.laststatus = 3
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 vim.opt.cmdheight = 2
 vim.opt.pumheight = 10
 

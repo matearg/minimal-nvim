@@ -24,11 +24,18 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use({
+    --[[ use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
+        end
+    }) ]]
+
+    use({
+        'savq/melange',
+        config = function()
+            vim.cmd('colorscheme melange')
         end
     })
 
@@ -58,12 +65,10 @@ return require('packer').startup(function(use)
         }
     }
 
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = false }
-    }
-
-    use('akinsho/bufferline.nvim')
+    -- use {
+    --     'nvim-lualine/lualine.nvim',
+    --     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
+    -- }
 
     use {
         'numToStr/Comment.nvim',
@@ -72,7 +77,6 @@ return require('packer').startup(function(use)
         end
     }
 
-    use('folke/zen-mode.nvim')
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
