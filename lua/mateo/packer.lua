@@ -63,6 +63,17 @@ return require('packer').startup(function(use)
         requires = { 'kyazdani42/nvim-web-devicons', opt = false }
     }
 
+    use('akinsho/bufferline.nvim')
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    use('folke/zen-mode.nvim')
+
     if packer_bootstrap then
         require('packer').sync()
     end

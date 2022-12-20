@@ -1,5 +1,6 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+vim.keymap.set("n", "<S-e>", ":Lex 25<CR>")
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
@@ -15,6 +16,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("x", "p", "\"_dP")
 
 vim.keymap.set("n", "<C-h>", "<C-w>h")
