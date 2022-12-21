@@ -24,20 +24,20 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    --[[ use({
+    use({
         'rose-pine/neovim',
         as = 'rose-pine',
         config = function()
             vim.cmd('colorscheme rose-pine')
         end
-    }) ]]
+    })
 
-    use({
+    --[[ use({
         'savq/melange',
         config = function()
             vim.cmd('colorscheme melange')
         end
-    })
+    }) ]]
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('mbbill/undotree')
