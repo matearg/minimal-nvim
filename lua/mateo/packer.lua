@@ -32,16 +32,13 @@ return require('packer').startup(function(use)
         end
     })
 
-    --[[ use({
-        'savq/melange',
-        config = function()
-            vim.cmd('colorscheme melange')
-        end
-    }) ]]
-
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-    use('mbbill/undotree')
-    use('tpope/vim-fugitive')
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -65,10 +62,17 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- use {
-    --     'nvim-lualine/lualine.nvim',
-    --     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
-    -- }
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = false }
+    }
+
+    use {
+        'akinsho/bufferline.nvim', tag = "v3.*",
+        config = function ()
+            require("bufferline").setup()
+        end
+    }
 
     use {
         'numToStr/Comment.nvim',
