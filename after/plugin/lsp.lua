@@ -7,7 +7,6 @@ lsp.ensure_installed({
     'sumneko_lua',
     'rust_analyzer',
     'clangd',
-    'jedi_language_server',
 })
 
 lsp.configure('sumneko_lua', {
