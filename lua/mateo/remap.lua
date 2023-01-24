@@ -21,10 +21,10 @@ vim.keymap.set("n", "N", "Nzzzv", opts)
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("x", "p", "\"_dP", opts)
 
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
+vim.keymap.set("n", "<C-j>", "<C-w>j", opts)
+vim.keymap.set("n", "<C-k>", "<C-w>k", opts)
+vim.keymap.set("n", "<C-l>", "<C-w>l", opts)
 
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>", opts)
 vim.keymap.set("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -33,3 +33,17 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 vim.keymap.set("n", "<S-l>", vim.cmd.bnext, opts)
 vim.keymap.set("n", "<S-h>", vim.cmd.bprevious, opts)
+
+function Toggle_shiftwidht()
+    local value = vim.api.nvim_get_option_value("shiftwidth", {})
+    if value == 2 then
+        value = 4
+    else
+        value = 2
+    end
+
+    vim.opt.shiftwidth = value
+    vim.notify("Indent" .. " set to " .. tostring(value))
+end
+
+vim.keymap.set("n", "<leader>i", ":lua Toggle_shiftwidht()<CR>")
