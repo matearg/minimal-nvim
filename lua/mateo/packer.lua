@@ -29,10 +29,12 @@ return require('packer').startup(function(use)
     --     as = 'rose-pine',
     -- })
 
-    use({
-        'savq/melange',
-        as = 'melange',
-    })
+    -- use({
+    --     'savq/melange',
+    --     as = 'melange',
+    -- })
+
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use {
