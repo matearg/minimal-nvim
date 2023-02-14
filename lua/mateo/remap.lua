@@ -1,8 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex, opts)
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle, opts)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, opts)
 vim.keymap.set("n", "<S-e>", ":Lex 25<CR>", opts)
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
@@ -19,7 +18,8 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
-vim.keymap.set("n", "Q", "<nop>")
+-- vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "Q", vim.cmd.bdelete)
 vim.keymap.set("x", "p", "\"_dP", opts)
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", opts)
