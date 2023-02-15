@@ -24,8 +24,6 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    -- use({ 'rose-pine/neovim', as = 'rose-pine' })
-    -- use({ 'savq/melange', as = 'melange' })
     use { "catppuccin/nvim", as = "catppuccin" }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
@@ -60,7 +58,7 @@ return require('packer').startup(function(use)
 
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = false }
+        -- requires = { 'kyazdani42/nvim-web-devicons', opt = false }
     }
 
     use {
