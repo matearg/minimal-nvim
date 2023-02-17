@@ -24,7 +24,7 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    -- use { "catppuccin/nvim", as = "catppuccin" }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use {
@@ -56,10 +56,12 @@ return require('packer').startup(function(use)
         }
     }
 
-    use {
-        'nvim-lualine/lualine.nvim',
-        -- requires = { 'kyazdani42/nvim-web-devicons', opt = false }
-    }
+    -- use {
+    --     'nvim-lualine/lualine.nvim',
+    --     requires = { 'kyazdani42/nvim-web-devicons', opt = false }
+    -- }
+
+    use 'kyazdani42/nvim-web-devicons'
 
     use {
         'akinsho/bufferline.nvim', tag = "v3.*",

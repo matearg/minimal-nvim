@@ -5,3 +5,13 @@ vim.keymap.set('n', 'fg', builtin.git_files, {})
 vim.keymap.set('n', 'fs', function()
     builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end)
+
+require('telescope').setup{
+    pickers = {
+        find_files = {
+            theme = "dropdown",
+            prompt_prefix = "  ",
+            previewer = false
+        }
+    }
+}
