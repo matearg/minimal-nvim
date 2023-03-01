@@ -54,7 +54,15 @@ return require('packer').startup(function(use)
         }
     }
 
-    use 'kyazdani42/nvim-web-devicons'
+    -- use 'kyazdani42/nvim-web-devicons'
+        
+        use {
+            'nvim-tree/nvim-tree.lua',
+            requires = {
+                'nvim-tree/nvim-web-devicons', -- optional, for file icons
+            },
+            tag = 'nightly' -- optional, updated every week. (see issue #1193)
+        }
 
     use {
         'akinsho/bufferline.nvim', tag = "v3.*",
