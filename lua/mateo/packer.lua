@@ -54,8 +54,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- use 'kyazdani42/nvim-web-devicons'
-
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
@@ -102,7 +100,8 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
-    use 'rafi/awesome-vim-colorschemes'
+    -- Use them if you want!
+    -- use 'rafi/awesome-vim-colorschemes'
 
     if packer_bootstrap then
         require('packer').sync()
