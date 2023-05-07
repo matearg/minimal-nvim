@@ -100,6 +100,8 @@ return require('packer').startup(function(use)
         config = function() require("nvim-autopairs").setup {} end
     }
 
+    use 'folke/tokyonight.nvim'
+
     -- Use them if you want!
     -- use 'rafi/awesome-vim-colorschemes'
 
