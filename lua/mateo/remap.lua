@@ -37,15 +37,15 @@ vim.keymap.set("n", "<S-l>", vim.cmd.bnext, opts)
 vim.keymap.set("n", "<S-h>", vim.cmd.bprevious, opts)
 
 function Toggle_shiftwidht()
-    local value = vim.api.nvim_get_option_value("shiftwidth", {})
-    if value == 2 then
-        value = 4
-    else
-        value = 2
-    end
+  local value = vim.api.nvim_get_option_value("shiftwidth", {})
+  if value == 2 then
+    value = 4
+  else
+    value = 2
+  end
 
-    vim.opt.shiftwidth = value
-    vim.notify("Indent" .. " set to " .. tostring(value))
+  vim.opt.shiftwidth = value
+  vim.notify("Indent" .. " set to " .. tostring(value))
 end
 
 vim.keymap.set("n", "<leader>i", ":lua Toggle_shiftwidht()<CR>")
