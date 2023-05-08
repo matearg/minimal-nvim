@@ -154,6 +154,6 @@ function status_line()
   }
 end
 
--- vim.opt.statusline = "%!v:lua.status_line()"
+vim.opt.statusline = "%!v:lua.status_line()"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

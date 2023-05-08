@@ -118,6 +118,7 @@ return require('packer').startup(function(use)
       }
     end
   }
+
   -- Use them if you want!
   -- use 'rafi/awesome-vim-colorschemes'
 
