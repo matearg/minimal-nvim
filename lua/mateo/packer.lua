@@ -107,18 +107,6 @@ return require('packer').startup(function(use)
     config = function() require('nvim-highlight-colors').setup {} end
   }
 
-  use { 'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' }
-        }
-      }
-    end
-  }
-
   -- Use them if you want!
   -- use 'rafi/awesome-vim-colorschemes'
 
