@@ -1,6 +1,6 @@
 require("mateo.remap")
 require("mateo.settings")
-require("mateo.packer")
+require("mateo.plugins")
 
 local augroup = vim.api.nvim_create_augroup
 local MateoGroup = augroup('mateo', {})

@@ -27,7 +27,7 @@ local icons = {
 
 require('cmp').setup({
   formatting = {
-    format = function (_, vim_item)
+    format = function(_, vim_item)
       vim_item.kind = icons[vim_item.kind] or " "
       return vim_item
     end

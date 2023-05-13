@@ -1,9 +1,9 @@
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
--- vim.keymap.set("n", "<leader>e", vim.cmd.Ex, opts)
--- vim.keymap.set("n", "<S-e>", ":Lex 25<CR>", opts)
-vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle, opts)
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex, opts)
+vim.keymap.set("n", "<S-e>", ":Lex 25<CR>", opts)
+-- vim.keymap.set("n", "<leader>e", vim.cmd.NeoTree, opts)
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<leader>q", vim.cmd.q)
