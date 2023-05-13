@@ -19,7 +19,7 @@ return require('lazy').setup({
     dependencies = { { 'nvim-lua/plenary.nvim' } }
   },
 
-  {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+  { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
   {
     'lewis6991/gitsigns.nvim',
@@ -56,7 +56,17 @@ return require('lazy').setup({
     dependencies = {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
-    }
+    },
+    config = function()
+      require('neo-tree').setup({
+        window = {
+          width = 25
+        },
+        filesystem = {
+          hijack_netrw_behavior = "open_current"
+        }
+      })
+    end
   },
 
   {

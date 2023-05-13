@@ -126,7 +126,7 @@ local modes = setmetatable({
   ['t'] = { ' TERMINAL', ' T' }
 }, {
   __index = function()
-    return { 'UNKNOWN', 'U' }     -- handle edge cases
+    return { 'UNKNOWN', 'U' } -- handle edge cases
   end
 })
 
@@ -142,18 +142,18 @@ end
 ---@diagnostic disable-next-line: lowercase-global
 function status_line()
   return table.concat {
-    get_current_mode(),                          -- get current mode
-    "%{get(b:,'gitsigns_head','')}",             -- branch name
-    " %<",                                       -- spacing
-    file_path(),                                 -- smart full path filename
-    "%h%m%r%w",                                  -- help flag, modified, readonly, and preview
-    "%=",                                        -- right align
-    "%{get(b:,'gitsigns_status','')}",           -- gitsigns
-    " [%-3.(%l|%c] ",                            -- line number, column number
-    "[%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]"     -- file type
+    get_current_mode(),                      -- get current mode
+    "%{get(b:,'gitsigns_head','')}",         -- branch name
+    " %<",                                   -- spacing
+    file_path(),                             -- smart full path filename
+    "%h%m%r%w",                              -- help flag, modified, readonly, and preview
+    "%=",                                    -- right align
+    "%{get(b:,'gitsigns_status','')}",       -- gitsigns
+    " [%-3.(%l|%c] ",                        -- line number, column number
+    "[%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]" -- file type
   }
 end
 
 vim.opt.statusline = "%!v:lua.status_line()"
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
