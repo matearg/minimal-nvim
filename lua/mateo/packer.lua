@@ -19,8 +19,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    -- or                            , branch = '0.1.x',
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
@@ -106,9 +105,6 @@ return require('packer').startup(function(use)
     'brenoprata10/nvim-highlight-colors',
     config = function() require('nvim-highlight-colors').setup {} end
   }
-
-  -- Use them if you want!
-  -- use 'rafi/awesome-vim-colorschemes'
 
   if packer_bootstrap then
     require('packer').sync()
