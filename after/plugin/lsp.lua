@@ -1,5 +1,32 @@
 local lsp = require('lsp-zero')
 
+local icons = {
+  Class = " ",
+  Color = " ",
+  Constant = " ",
+  Constructor = " ",
+  Enum = " ",
+  EnumMember = " ",
+  Event = " ",
+  File = " ",
+  Folder = " ",
+  Function = " ",
+  Interface = " ",
+  Keyword = " ",
+  Method = " ",
+  Module = " ",
+  Operator = " ",
+  Property = " ",
+  Reference = " ",
+  Snippet = " ",
+  Struct = " ",
+  Text = " ",
+  TypeParameter = " ",
+  Unit = " ",
+  Variable = " ",
+  Value = " ",
+}
+
 lsp.preset('recommended')
 lsp.ensure_installed({
   'lua_ls',
@@ -23,11 +50,18 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
   ['<C-y>'] = cmp.mapping.confirm({ select = true }),
+  ['<Return>'] = cmp.mapping.confirm({ select = true }),
   ['<C-Space>'] = cmp.mapping.complete(),
 })
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
+  formatting = {
+    format = function(_, vim_item)
+      vim_item.kind = icons[vim_item.kind] or " "
+      return vim_item
+    end
+  }
 })
 
 lsp.on_attach(function(client, bufnr)
