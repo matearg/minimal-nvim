@@ -71,7 +71,6 @@ return require('lazy').setup({
 
   {
     'akinsho/bufferline.nvim',
-    branch = 'v3.0.0',
     config = function()
       require('bufferline').setup()
     end
