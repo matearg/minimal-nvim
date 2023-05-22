@@ -5,6 +5,12 @@ function ColorMyPencils(color)
     transparent = true
   })
 
+  require('onedarkpro').setup({
+    options = {
+      transparency = true
+    }
+  })
+
   color = color or "tokyonight"
   vim.cmd.colorscheme(color)
 
