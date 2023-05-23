@@ -60,7 +60,7 @@ return require('lazy').setup({
     config = function()
       require('neo-tree').setup({
         window = {
-          width = 25
+          width = 35
         },
         filesystem = {
           hijack_netrw_behavior = "open_current"
@@ -106,7 +106,6 @@ return require('lazy').setup({
     config = function() require('nvim-autopairs').setup {} end
   },
 
-  'folke/tokyonight.nvim',
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000 -- Ensure it loads first

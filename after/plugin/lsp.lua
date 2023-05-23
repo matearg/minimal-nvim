@@ -32,6 +32,7 @@ lsp.ensure_installed({
   'lua_ls',
   'clangd',
   'pyright',
+  'html',
 })
 
 lsp.configure('lua_ls', {
