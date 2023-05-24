@@ -71,7 +71,7 @@ return require('lazy').setup({
 
   {
     'stevearc/oil.nvim',
-    config = function ()
+    config = function()
       require('oil').setup({})
       vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
     end
@@ -109,6 +109,29 @@ return require('lazy').setup({
   {
     "olimorris/onedarkpro.nvim",
     priority = 1000 -- Ensure it loads first
+  },
+
+  {
+    'nvim-lualine/lualine.nvim',
+    config = function()
+      require('lualine').setup {
+        options = {
+          icons_enabled = false,
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' }
+        },
+        sections = {
+          lualine_c = { 'filename', require('lsp-progress').progress }
+        }
+      }
+    end
+  },
+
+  {
+    'linrongbin16/lsp-progress.nvim',
+    config = function()
+      require('lsp-progress').setup()
+    end
   },
 
   {

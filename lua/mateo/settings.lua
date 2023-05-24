@@ -150,10 +150,19 @@ function status_line()
     "%=",                                    -- right align
     "%{get(b:,'gitsigns_status','')}",       -- gitsigns
     " [%-3.(%l|%c] ",                        -- line number, column number
-    "[%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]" -- file type
+    require('lsp-progress').progress(),
+    " [%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]" -- file type
   }
 end
 
-vim.opt.statusline = "%!v:lua.status_line()"
+-- vim.opt.statusline = "%!v:lua.status_line()"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- refresh lualine
+vim.cmd([[
+augroup lualine_augroup
+    autocmd!
+    autocmd User LspProgressStatusUpdated lua require("lualine").refresh()
+augroup END
+]])
