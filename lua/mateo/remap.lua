@@ -19,7 +19,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", opts)
 vim.keymap.set("n", "n", "nzzzv", opts)
 vim.keymap.set("n", "N", "Nzzzv", opts)
 
--- vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "Q", vim.cmd.bdelete)
 vim.keymap.set("x", "p", "\"_dP", opts)
 

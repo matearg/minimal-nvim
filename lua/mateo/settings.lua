@@ -142,27 +142,19 @@ end
 ---@diagnostic disable-next-line: lowercase-global
 function status_line()
   return table.concat {
-    get_current_mode(),                      -- get current mode
-    "%{get(b:,'gitsigns_head','')}",         -- branch name
-    " %<",                                   -- spacing
-    file_path(),                             -- smart full path filename
-    "%h%m%r%w",                              -- help flag, modified, readonly, and preview
-    "%=",                                    -- right align
-    "%{get(b:,'gitsigns_status','')}",       -- gitsigns
-    " [%-3.(%l|%c] ",                        -- line number, column number
-    require('lsp-progress').progress(),
+    get_current_mode(),                       -- get current mode
+    "%{get(b:,'gitsigns_head','')}",          -- branch name
+    " %<",                                    -- spacing
+    file_path(),                              -- smart full path filename
+    "%h%m%r%w",                               -- help flag, modified, readonly, and preview
+    "%=",                                     -- right align
+    "%{get(b:,'gitsigns_status','')}",        -- gitsigns
+    " [%-3.(%l|%c] ",                         -- line number, column number
+    require('lsp-progress').progress(),       -- lsp-status
     " [%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]" -- file type
   }
 end
 
--- vim.opt.statusline = "%!v:lua.status_line()"
+vim.opt.statusline = "%!v:lua.status_line()"
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
--- refresh lualine
-vim.cmd([[
-augroup lualine_augroup
-    autocmd!
-    autocmd User LspProgressStatusUpdated lua require("lualine").refresh()
-augroup END
-]])

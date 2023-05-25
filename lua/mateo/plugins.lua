@@ -112,22 +112,6 @@ return require('lazy').setup({
   },
 
   {
-    'nvim-lualine/lualine.nvim',
-    config = function()
-      require('lualine').setup {
-        options = {
-          icons_enabled = false,
-          component_separators = { left = '', right = '' },
-          section_separators = { left = '', right = '' }
-        },
-        sections = {
-          lualine_c = { 'filename', require('lsp-progress').progress }
-        }
-      }
-    end
-  },
-
-  {
     'linrongbin16/lsp-progress.nvim',
     config = function()
       require('lsp-progress').setup()
