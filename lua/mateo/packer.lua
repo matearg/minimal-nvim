@@ -54,23 +54,6 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly',                 -- optional, updated every week. (see issue #1193)
-    config = function()
-      require('nvim-tree').setup({
-        actions = {
-          open_file = {
-            quit_on_open = true,
-          },
-        },
-      })
-    end
-  }
-
-  use {
     'akinsho/bufferline.nvim', tag = 'v3.*',
     config = function()
       require('bufferline').setup()
@@ -98,8 +81,6 @@ return require('packer').startup(function(use)
     'windwp/nvim-autopairs',
     config = function() require('nvim-autopairs').setup {} end
   }
-
-  use 'folke/tokyonight.nvim'
 
   use {
     'brenoprata10/nvim-highlight-colors',
