@@ -112,13 +112,6 @@ return require('lazy').setup({
   },
 
   {
-    'linrongbin16/lsp-progress.nvim',
-    config = function()
-      require('lsp-progress').setup()
-    end
-  },
-
-  {
     'brenoprata10/nvim-highlight-colors',
     config = function() require('nvim-highlight-colors').setup {} end
   },

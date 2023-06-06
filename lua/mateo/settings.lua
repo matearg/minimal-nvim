@@ -150,7 +150,6 @@ function status_line()
     "%=",                                     -- right align
     "%{get(b:,'gitsigns_status','')}",        -- gitsigns
     " [%-3.(%l|%c] ",                         -- line number, column number
-    require('lsp-progress').progress(),       -- lsp-status
     " [%{strlen(&ft)?&ft[0].&ft[1:]:'None'}]" -- file type
   }
 end
